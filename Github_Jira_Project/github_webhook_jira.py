@@ -46,6 +46,7 @@ def create_jira_ticket():
     })
 
     response = requests.post(jira_url, data=payload, headers=headers, auth=auth)
+    print(f"Jira API response: {response.status_code}, {response.text}")  # Debug response
     return response
 
 # Route to handle GitHub webhook
